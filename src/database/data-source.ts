@@ -1,5 +1,6 @@
 import { DataSource } from "typeorm";
 import dotenv from "dotenv";
+import { Sale } from "../models/Sale.js";
 
 dotenv.config();
 
@@ -11,5 +12,5 @@ export const AppDataSource = new DataSource({
   password: process.env.DB_PASSWORD,
   database: process.env.DB_NAME,
   synchronize: true, // Em produção, utilize migrations!
-  entities: ["src/models/*.ts"],
+  entities: [Sale],
 });
